@@ -1,76 +1,102 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #eef4ff;
+* {
+  box-sizing: border-box;
 }
 
-.profile-container {
+body {
+  margin: 0;
+  height: 100vh;
+  background: #e8f0fe;
+  font-family: Arial, sans-serif;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
-.profile-card {
+/* ===== กล่องหลัก ===== */
+.profile-container {
+  width: 420px;                 /* เพิ่มขนาดโครงสร้างหลัก */
   background: white;
-  width: 420px;
-  padding: 30px 35px 40px;
-  border-radius: 14px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  text-align: center;
+  border-radius: 10px;
+  padding: 30px 35px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  position: relative;
+}
+
+/* ===== Header ===== */
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
 }
 
 .avatar {
-  width: 110px;
-  height: 110px;
-  background: #0077ff;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
-  margin: 0 auto 15px;
+  background: #0078d7;
+  margin-bottom: 12px;
 }
 
-#username {
-  margin: 10px 0 12px;
+#usernameDisplay {
+  margin: 5px 0 10px;
 }
 
 .edit-btn {
-  padding: 5px 14px;
+  font-size: 13px;
+  padding: 4px 10px;
   cursor: pointer;
 }
 
-form {
-  margin-top: 18px;
-}
-
-form input {
+/* ===== Form ===== */
+#profileForm {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* ทำให้ทุกอย่างอยู่กลาง */
 }
 
+.form-group {
+  width: 100%;           /* ซ้าย–ขวาเท่ากัน */
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 14px;
+}
+
+/* ===== Save Button ===== */
 #saveBtn {
-  width: 100%;
-  padding: 11px;
-  background: #b5b5b5;
-  border: none;
-  border-radius: 6px;
+  width: 100%;           /* ยาวเท่าช่อง input */
+  margin-top: 10px;
+  padding: 10px 0;
+  background: #0078d7;
   color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#saveBtn:disabled {
+  background: #aaa;
   cursor: not-allowed;
 }
 
-#saveBtn.active {
-  background: #0077ff;
-  cursor: pointer;
-}
-
-.back {
-  margin-top: 16px;
-  text-align: right;
-}
-
-.back a {
+/* ===== Back ===== */
+.back-link {
+  position: absolute;
+  right: 20px;
+  bottom: 15px;
+  font-size: 13px;
   text-decoration: underline;
-  color: black;
-  font-size: 14px;
+  cursor: pointer;
 }
