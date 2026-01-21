@@ -1,28 +1,29 @@
 * {
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
   margin: 0;
   height: 100vh;
-  background: #f2f4f8;
+  background: #e8f0fe;
+  font-family: Arial, sans-serif;
+
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* กล่องโครงสร้างหลัก */
+/* ===== กล่องหลัก ===== */
 .profile-container {
-  width: 420px;
-  background: #ffffff;
-  padding: 30px 35px 50px;
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 420px;                 /* เพิ่มขนาดโครงสร้างหลัก */
+  background: white;
+  border-radius: 10px;
+  padding: 30px 35px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   position: relative;
 }
 
-/* ส่วนหัวโปรไฟล์ */
+/* ===== Header ===== */
 .profile-header {
   display: flex;
   flex-direction: column;
@@ -30,92 +31,72 @@ body {
   margin-bottom: 25px;
 }
 
-/* วงกลมโปรไฟล์ */
 .avatar {
-  width: 100px;
-  height: 100px;
-  background: #d9d9d9;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
+  background: #0078d7;
   margin-bottom: 12px;
 }
 
-/* username */
 #usernameDisplay {
-  margin: 6px 0 10px;
-  font-size: 18px;
-  font-weight: bold;
+  margin: 5px 0 10px;
 }
 
-/* ปุ่ม Edit */
 .edit-btn {
-  font-size: 12px;
-  padding: 4px 12px;
-  border-radius: 20px;
-  border: 1px solid #bbb;
-  background: #fff;
+  font-size: 13px;
+  padding: 4px 10px;
   cursor: pointer;
 }
 
-/* ฟอร์ม */
+/* ===== Form ===== */
 #profileForm {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center;   /* ทำให้ทุกอย่างอยู่กลาง */
 }
 
-/* กลุ่ม input */
 .form-group {
-  width: 100%;
+  width: 100%;           /* ซ้าย–ขวาเท่ากัน */
   margin-bottom: 14px;
 }
 
 .form-group label {
   display: block;
-  font-size: 13px;
+  font-size: 14px;
   margin-bottom: 4px;
-  color: #444;
 }
 
 .form-group input {
   width: 100%;
-  padding: 10px 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+  padding: 8px 10px;
   font-size: 14px;
 }
 
-/* input ที่ยัง disabled */
-.form-group input:disabled {
-  background: #f3f3f3;
-  color: #666;
-}
-
-/* ปุ่ม Save */
+/* ===== Save Button ===== */
 #saveBtn {
-  width: 100%;
-  margin-top: 18px;
-  padding: 11px;
-  border-radius: 8px;
-  border: none;
-  background: #4a6cf7;
+  width: 100%;           /* ยาวเท่าช่อง input */
+  margin-top: 10px;
+  padding: 10px 0;
+  background: #0078d7;
   color: white;
-  font-size: 15px;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
 }
 
-/* ปุ่ม Save ตอนยังไม่กรอกครบ */
 #saveBtn:disabled {
-  background: #bfc7f3;
+  background: #aaa;
   cursor: not-allowed;
 }
 
-/* Back link */
+/* ===== Back ===== */
 .back-link {
   position: absolute;
   right: 20px;
-  bottom: 16px;
+  bottom: 15px;
   font-size: 13px;
-  cursor: pointer;
   text-decoration: underline;
-  color: #444;
+  cursor: pointer;
 }
