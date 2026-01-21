@@ -8,34 +8,50 @@
 <body>
 
   <div class="profile-container">
-    <div class="profile-card">
 
-      <!-- avatar -->
+    <!-- Avatar + Username -->
+    <div class="profile-header">
       <div class="avatar"></div>
+      <h2 id="usernameDisplay"></h2>
 
-      <!-- username -->
-      <h2 id="username"></h2>
+      <button id="editBtn" class="edit-btn">✏️ Edit</button>
+    </div>
 
-      <!-- edit -->
-      <button id="editBtn" class="edit-btn">✏ Edit</button>
+    <!-- Form -->
+    <form id="profileForm">
 
-      <!-- form -->
-      <form id="profileForm">
-        <input type="text" id="nameInput" placeholder="ชื่อ - นามสกุล" disabled>
-        <input type="text" placeholder="ชั้น" disabled>
-        <input type="text" placeholder="เลขที่" disabled>
-        <input type="text" placeholder="เบอร์โทร (ไม่จำเป็น)" disabled>
-        <input type="email" placeholder="Email (ไม่จำเป็น)" disabled>
-
-        <button type="submit" id="saveBtn" disabled>Save</button>
-      </form>
-
-      <!-- back -->
-      <div class="back">
-        <a href="loggedin.html">Back</a>
+      <!-- Email (ย้ายขึ้นก่อน + จำเป็นต้องกรอก) -->
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="email" required disabled>
       </div>
 
-    </div>
+      <div class="form-group">
+        <label>ชื่อ-นามสกุล</label>
+        <input type="text" disabled>
+      </div>
+
+      <div class="form-group">
+        <label>ชั้น</label>
+        <input type="text" disabled>
+      </div>
+
+      <div class="form-group">
+        <label>เลขที่</label>
+        <input type="text" disabled>
+      </div>
+
+      <div class="form-group">
+        <label>เบอร์โทร</label>
+        <input type="text" disabled>
+      </div>
+
+      <button type="submit" id="saveBtn" disabled>Save</button>
+    </form>
+
+    <!-- Back -->
+    <a href="loggedin.html" class="back-link">Back</a>
+
   </div>
 
   <script src="profile.js"></script>
