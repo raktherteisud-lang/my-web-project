@@ -5,17 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const welcomeMsg = document.getElementById("welcomeMsg");
   const pointsDisplay = document.getElementById("points");
   const logoutBtn = document.getElementById("logoutBtn");
-
   const menuBtn = document.getElementById("menuBtn");
   const sidebar = document.getElementById("sidebar");
-  const overlay = document.getElementById("overlay");
-  const profileLink = document.getElementById("profileLink");
 
-  // ป้องกัน error
-  if (!welcomeMsg || !pointsDisplay || !logoutBtn || !menuBtn || !sidebar || !overlay) {
-    console.error("HTML element ไม่ครบ");
-    return;
-  }
+  // ป้องกัน sidebar โผล่เอง
+  sidebar.classList.remove("open");
 
   // เช็ก login
   if (!username) {
@@ -23,8 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  // แสดงชื่อ
   welcomeMsg.textContent = `Welcome, ${username}!`;
 
+  // points
   let points = localStorage.getItem("points");
   if (points === null) {
     points = 0;
@@ -35,24 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // ☰ toggle sidebar
   menuBtn.addEventListener("click", () => {
     sidebar.classList.toggle("open");
-    overlay.style.display = sidebar.classList.contains("open") ? "block" : "none";
   });
 
-  // คลิก overlay → ปิด
-  overlay.addEventListener("click", () => {
-    sidebar.classList.remove("open");
-    overlay.style.display = "none";
-  });
-
-  // คลิก Profile → ปิดก่อนเปลี่ยนหน้า
-  if (profileLink) {
-    profileLink.addEventListener("click", () => {
-      sidebar.classList.remove("open");
-      overlay.style.display = "none";
-    });
-  }
-
-  // Logout
+  // Log out
   logoutBtn.addEventListener("click", () => {
     localStorage.removeItem("loggedInUser");
     window.location.href = "index.html";
