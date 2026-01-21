@@ -1,28 +1,45 @@
 body {
-      font-family: Arial, sans-serif;
-      background-color: #e8f0fe;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    h1 {
-      color: #333;
-    }
-    p {
-      font-size: 18px;
-      margin: 10px 0;
-    }
-    button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #0078d7;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #005fa3;
-    }
+  font-family: Arial, sans-serif;
+  background-color: #e8f0fe;
+  height: 100vh;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  margin: 8px;
+  padding: 10px 20px;
+  background-color: #0078d7;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
+
+/* ===== Modal ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+
+  display: none;        /* ต้องเป็น none ตอนเริ่ม */
+  justify-content: center;
+  align-items: center;
+
+  z-index: 999;
+}
+
+.modal-box {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  text-align: center;
+}
