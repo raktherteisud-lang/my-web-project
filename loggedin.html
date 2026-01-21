@@ -7,17 +7,24 @@
 </head>
 <body>
 
+  <!-- ปุ่มเมนู 3 ขีด -->
+  <button id="openModalBtn" class="menu-btn" aria-label="Menu">
+    &#9776;
+  </button>
+
   <h1 id="welcomeMsg"></h1>
   <p id="points"></p>
 
-  <button id="openModalBtn">เปิดแท็บ</button>
   <button id="logoutBtn" type="button">Log Out</button>
 
   <!-- Modal -->
   <div id="modalOverlay" class="modal-overlay">
     <div class="modal-box">
       <h2>เมนูเพิ่มเติม</h2>
-      <p>เลือก option</p>
+
+      <button>โปรไฟล์</button>
+      <button>ตั้งค่า</button>
+
       <button id="closeModalBtn">ปิด</button>
     </div>
   </div>
