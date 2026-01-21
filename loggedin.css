@@ -1,39 +1,54 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #e8f0fe;
+  background-color: #e8f0fe;
+  height: 100vh;
 }
 
-/* ☰ */
+/* ☰ button */
 .menu-btn {
   position: fixed;
   top: 15px;
-  right: 20px;
-  font-size: 28px;
+  right: 15px;
+  font-size: 22px;
+  padding: 8px 14px;
+  background-color: #0078d7;
+  color: white;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
   z-index: 1002;
 }
 
-/* overlay */
-.overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.3);
-  display: none;
-  z-index: 1000;
+/* Content */
+.content {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-/* sidebar */
+button {
+  padding: 10px 20px;
+  margin: 8px;
+  background-color: #0078d7;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Sidebar */
 .sidebar {
   position: fixed;
   top: 0;
-  right: -260px;
+  right: -260px;              /* ซ่อนเริ่มต้น */
   width: 260px;
   height: 100vh;
-  background: #fff;
+  background: white;
   box-shadow: -2px 0 8px rgba(0,0,0,0.2);
   transition: right 0.3s ease;
-  padding: 20px;
   z-index: 1001;
 }
 
@@ -41,23 +56,29 @@ body {
   right: 0;
 }
 
-/* profile bar */
+/* Profile clickable link */
 .profile-link {
+  display: block;
   text-decoration: none;
-  color: inherit;
+  color: #000;
 }
 
+.profile-link:visited,
+.profile-link:hover,
+.profile-link:active {
+  color: #000;
+  text-decoration: none;
+}
+
+/* Gray background behind profile */
 .profile-bg {
   background: #e0e0e0;
-  padding: 25px 15px;
-  margin: -20px -20px 30px -20px;
+  padding: 20px 15px 30px;
+  margin: 0 0 25px 0;
+  cursor: pointer;
 }
 
-.profile-bg:hover {
-  background: #d5d5d5;
-}
-
-/* profile content */
+/* Profile layout */
 .profile {
   display: flex;
   align-items: center;
@@ -67,29 +88,23 @@ body {
 .avatar {
   width: 60px;
   height: 60px;
-  background: #0078d7;
   border-radius: 50%;
+  background: #0078d7;
 }
 
-/* menu buttons */
+.profile-text {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Menu list */
 .menu-list button {
   width: 100%;
-  padding: 12px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   background: #f1f1f1;
-  border: none;
-  cursor: pointer;
+  color: #333;
 }
 
 .menu-list button:hover {
   background: #ddd;
-}
-
-/* content */
-.content {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
