@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile</title>
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+  <div class="profile-container">
+
+    <!-- Avatar + Username -->
+    <div class="profile-header">
+      <div class="avatar"></div>
+      <h2 id="username"></h2>
+      <button id="editBtn" class="edit-btn">✏️ Edit</button>
+    </div>
+
+    <!-- Form -->
+    <div class="profile-form">
+      <input type="text" id="fullname" placeholder="ชื่อ - นามสกุล" disabled>
+      <input type="text" id="class" placeholder="ชั้น" disabled>
+      <input type="text" id="number" placeholder="เลขที่" disabled>
+      <input type="tel" id="phone" placeholder="เบอร์โทร (ไม่จำเป็น)" disabled>
+      <input type="email" id="email" placeholder="Email (ไม่จำเป็น)" disabled>
+
+      <button id="saveBtn" disabled>Save</button>
+    </div>
+
+    <!-- Back -->
+    <div class="back-link" id="backBtn">Back</div>
+
+  </div>
+
+  <script src="profile.js"></script>
+</body>
+</html>
