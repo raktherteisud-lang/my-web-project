@@ -5,22 +5,22 @@ body {
   height: 100vh;
 }
 
-/* ☰ เมนู */
+/* ☰ */
 .menu-btn {
   position: fixed;
   top: 15px;
   right: 15px;
+  font-size: 22px;
   padding: 8px 14px;
-  font-size: 20px;
   background-color: #0078d7;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  z-index: 1001;
+  z-index: 1002;
 }
 
-/* เนื้อหากลางจอ */
+/* Content */
 .content {
   height: 100vh;
   display: flex;
@@ -30,8 +30,8 @@ body {
 }
 
 button {
-  margin: 8px;
   padding: 10px 20px;
+  margin: 8px;
   background-color: #0078d7;
   color: white;
   border: none;
@@ -39,32 +39,48 @@ button {
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #005fa3;
-}
-
-/* ===== Modal ===== */
-.modal-overlay {
+/* ===== Sidebar ===== */
+.sidebar {
   position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-
-  display: none;              /* สำคัญ */
-  justify-content: center;
-  align-items: center;
-
-  pointer-events: none;       /* ❗ ปิดการรับคลิก */
-  z-index: 1000;
-}
-
-.modal-overlay.show {
-  display: flex;
-  pointer-events: auto;       /* เปิดรับคลิกเฉพาะตอนเปิด */
-}
-
-.modal-box {
+  top: 0;
+  right: -260px;          /* ซ่อน */
+  width: 260px;
+  height: 100%;
   background: white;
-  padding: 25px;
-  border-radius: 8px;
-  text-align: center;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  transition: right 0.3s ease;
+  z-index: 1001;
+  padding: 20px;
+}
+
+/* เปิด sidebar */
+.sidebar.open {
+  right: 0;
+}
+
+/* Profile */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #0078d7;
+}
+
+/* Menu list */
+.menu-list button {
+  width: 100%;
+  margin-bottom: 12px;
+  background: #f1f1f1;
+  color: #333;
+}
+
+.menu-list button:hover {
+  background: #ddd;
 }
