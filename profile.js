@@ -1,40 +1,50 @@
-document.addEventListener("DOMContentLoaded", () => {
+const usernameDisplay = document.getElementById("usernameDisplay");
+const editBtn = document.getElementById("editBtn");
+const saveBtn = document.getElementById("saveBtn");
 
-  const username = localStorage.getItem("loggedInUser");
+const inputs = {
+  fullname: document.getElementById("fullname"),
+  classroom: document.getElementById("classroom"),
+  number: document.getElementById("number"),
+  email: document.getElementById("email"),
+  phone: document.getElementById("phone")
+};
 
-  const usernameDisplay = document.getElementById("usernameDisplay");
-  const editBtn = document.getElementById("editBtn");
-  const saveBtn = document.getElementById("saveBtn");
-  const inputs = document.querySelectorAll("#profileForm input");
+/* ===== แสดง username จาก localStorage ===== */
+usernameDisplay.textContent = localStorage.getItem("username") || "User";
 
-  // แสดง username จาก localStorage
-  if (username) {
-    usernameDisplay.textContent = username;
-  }
+/* ===== เปิดโหมดแก้ไข ===== */
+editBtn.addEventListener("click", () => {
+  Object.values(inputs).forEach(input => input.disabled = false);
+});
 
-  let editing = false;
+/* ===== ตรวจเงื่อนไข Save ===== */
+function checkRequiredFields() {
+  const requiredFilled =
+    inputs.fullname.value.trim() !== "" &&
+    inputs.classroom.value.trim() !== "" &&
+    inputs.number.value.trim() !== "" &&
+    inputs.email.value.trim() !== "";
 
-  // กด Edit เพื่อเปิด/ปิดการแก้ไข
-  editBtn.addEventListener("click", () => {
-    editing = !editing;
+  saveBtn.disabled = !requiredFilled;
+}
 
-    inputs.forEach(input => {
-      input.disabled = !editing;
-    });
+/* ===== ตรวจทุกครั้งที่พิมพ์ ===== */
+Object.values(inputs).forEach(input => {
+  input.addEventListener("input", checkRequiredFields);
+});
 
-    saveBtn.disabled = !editing;
-    editBtn.textContent = editing ? "❌ Cancel" : "✏️ Edit";
-  });
+/* ===== กด Save ===== */
+document.getElementById("profileForm").addEventListener("submit", (e) => {
+  e.preventDefault();
 
-  // Save
-  document.getElementById("profileForm").addEventListener("submit", (e) => {
-    e.preventDefault();
-    alert("บันทึกข้อมูลเรียบร้อย");
-    editing = false;
+  localStorage.setItem("profile", JSON.stringify({
+    fullname: inputs.fullname.value,
+    classroom: inputs.classroom.value,
+    number: inputs.number.value,
+    email: inputs.email.value,
+    phone: inputs.phone.value
+  }));
 
-    inputs.forEach(input => input.disabled = true);
-    saveBtn.disabled = true;
-    editBtn.textContent = "✏️ Edit";
-  });
-
+  alert("บันทึกข้อมูลเรียบร้อย");
 });
