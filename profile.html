@@ -1,37 +1,39 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Profile</title>
-  <link rel="stylesheet" href="profile.css" />
+  <link rel="stylesheet" href="profile.css">
 </head>
 <body>
 
   <div class="profile-container">
     <div class="profile-card">
 
-      <!-- Profile Image -->
+      <!-- avatar -->
       <div class="avatar"></div>
 
-      <!-- Username -->
-      <h2 id="username">ฟะะ</h2>
+      <!-- username -->
+      <h2 id="username"></h2>
 
-      <!-- Edit Button -->
-      <button class="edit-btn" id="editBtn">✏️ Edit</button>
+      <!-- edit -->
+      <button id="editBtn" class="edit-btn">✏ Edit</button>
 
-      <!-- Form -->
+      <!-- form -->
       <form id="profileForm">
-        <input type="text" value="ฟะะ" disabled />
-        <input type="text" value="6/3" disabled />
-        <input type="text" value="7" disabled />
-        <input type="text" placeholder="เบอร์โทร (ไม่จำเป็น)" disabled />
-        <input type="email" placeholder="Email (ไม่จำเป็น)" disabled />
+        <input type="text" id="nameInput" placeholder="ชื่อ - นามสกุล" disabled>
+        <input type="text" placeholder="ชั้น" disabled>
+        <input type="text" placeholder="เลขที่" disabled>
+        <input type="text" placeholder="เบอร์โทร (ไม่จำเป็น)" disabled>
+        <input type="email" placeholder="Email (ไม่จำเป็น)" disabled>
 
-        <button type="submit" class="save-btn" disabled>Save</button>
+        <button type="submit" id="saveBtn" disabled>Save</button>
       </form>
 
-      <!-- Back -->
-      <a href="loggedin.html" class="back-link">Back</a>
+      <!-- back -->
+      <div class="back">
+        <a href="loggedin.html">Back</a>
+      </div>
 
     </div>
   </div>
