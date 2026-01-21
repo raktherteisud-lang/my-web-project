@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Logged In</title>
   <link rel="stylesheet" href="loggedin.css">
 </head>
@@ -12,14 +11,14 @@
   <button id="menuBtn" class="menu-btn">☰</button>
 
   <!-- เนื้อหาหลัก -->
-  <main class="content">
+  <div class="content">
     <h1 id="welcomeMsg"></h1>
     <p id="points"></p>
     <button id="logoutBtn">Log Out</button>
-  </main>
+  </div>
 
-  <!-- Sidebar / Menu Panel -->
-  <aside id="menuPanel" class="menu-panel">
+  <!-- Sidebar -->
+  <div id="sidebar" class="sidebar">
 
     <!-- Profile -->
     <div class="profile">
@@ -28,13 +27,13 @@
     </div>
 
     <!-- Menu list -->
-    <nav class="menu-list">
+    <div class="menu-list">
       <button>Settings</button>
       <button>History</button>
       <button>Help</button>
-    </nav>
+    </div>
 
-  </aside>
+  </div>
 
   <script src="loggedin.js"></script>
 </body>
