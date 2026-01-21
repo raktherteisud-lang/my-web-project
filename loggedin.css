@@ -10,6 +10,7 @@ body {
   align-items: center;
 }
 
+/* ปุ่มทั่วไป */
 button {
   margin: 8px;
   padding: 10px 20px;
@@ -24,13 +25,29 @@ button:hover {
   background-color: #005fa3;
 }
 
+/* ปุ่มเมนู ☰ */
+.menu-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+
+  background: none;
+  color: #333;
+  font-size: 28px;
+  padding: 5px 10px;
+}
+
+.menu-btn:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+
 /* ===== Modal ===== */
 .modal-overlay {
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.6);
 
-  display: none;        /* ต้องเป็น none ตอนเริ่ม */
+  display: none;
   justify-content: center;
   align-items: center;
 
@@ -39,7 +56,8 @@ button:hover {
 
 .modal-box {
   background: white;
-  padding: 25px;
+  padding: 20px;
   border-radius: 8px;
-  text-align: center;
+  width: 250px;
+  text-align: left;
 }
