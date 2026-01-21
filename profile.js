@@ -1,39 +1,29 @@
-document.addEventListener("DOMContentLoaded", () => {
+const editBtn = document.getElementById("editBtn");
+const form = document.getElementById("profileForm");
+const inputs = form.querySelectorAll("input");
 
-  const username = localStorage.getItem("loggedInUser");
-  const usernameDisplay = document.getElementById("usernameDisplay");
-  const editBtn = document.getElementById("editBtn");
-  const saveBtn = document.getElementById("saveBtn");
-  const inputs = document.querySelectorAll("#profileForm input");
+// เริ่มต้นให้แก้ไขไม่ได้
+inputs.forEach(input => input.disabled = true);
 
-  if (!username) {
-    window.location.href = "index.html";
-    return;
-  }
+let isEditing = false;
 
-  usernameDisplay.textContent = username;
-
-  let editing = false;
-
-  editBtn.addEventListener("click", () => {
-    editing = !editing;
+editBtn.addEventListener("click", () => {
+    isEditing = !isEditing;
 
     inputs.forEach(input => {
-      input.disabled = !editing;
+        input.disabled = !isEditing;
     });
 
-    saveBtn.disabled = !editing;
-    editBtn.textContent = editing ? "✖ Cancel" : "✏️ Edit";
-  });
+    editBtn.textContent = isEditing ? "✖ Cancel" : "✏ Edit";
+});
 
-  document.getElementById("profileForm").addEventListener("input", () => {
-    const requiredFilled =
-      document.getElementById("fullname").value &&
-      document.getElementById("class").value &&
-      document.getElementById("number").value &&
-      document.getElementById("email").value;
+// กด Save
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-    saveBtn.disabled = !requiredFilled;
-  });
+    inputs.forEach(input => input.disabled = true);
+    isEditing = false;
+    editBtn.textContent = "✏ Edit";
 
+    alert("บันทึกข้อมูลเรียบร้อย");
 });
