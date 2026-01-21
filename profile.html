@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
   <meta charset="UTF-8">
   <title>Profile</title>
@@ -8,34 +8,59 @@
 <body>
 
   <div class="profile-container">
-    <div class="profile-card">
 
-      <!-- avatar -->
-      <div class="avatar"></div>
+    <!-- Header -->
+    <div class="profile-header">
+      <!-- รูปโปรไฟล์ -->
+      <img src="assets/avatar.png" alt="avatar" class="avatar">
 
-      <!-- username -->
-      <h2 id="username"></h2>
+      <!-- username จาก localStorage -->
+      <h3 id="usernameDisplay"></h3>
 
-      <!-- edit -->
-      <button id="editBtn" class="edit-btn">✏ Edit</button>
+      <button id="editBtn" class="edit-btn">✏️ Edit</button>
+    </div>
 
-      <!-- form -->
-      <form id="profileForm">
-        <input type="text" id="nameInput" placeholder="ชื่อ - นามสกุล" disabled>
-        <input type="text" placeholder="ชั้น" disabled>
-        <input type="text" placeholder="เลขที่" disabled>
-        <input type="text" placeholder="เบอร์โทร (ไม่จำเป็น)" disabled>
-        <input type="email" placeholder="Email (ไม่จำเป็น)" disabled>
+    <!-- Form -->
+    <form id="profileForm">
 
-        <button type="submit" id="saveBtn" disabled>Save</button>
-      </form>
-
-      <!-- back -->
-      <div class="back">
-        <a href="loggedin.html">Back</a>
+      <!-- 1. ชื่อ-นามสกุล (จำเป็น) -->
+      <div class="form-group">
+        <label>ชื่อ - นามสกุล</label>
+        <input type="text" id="fullname" required disabled>
       </div>
 
-    </div>
+      <!-- 2. ชั้น (จำเป็น) -->
+      <div class="form-group">
+        <label>ชั้น</label>
+        <input type="text" id="class" required disabled>
+      </div>
+
+      <!-- 3. เลขที่ (จำเป็น) -->
+      <div class="form-group">
+        <label>เลขที่</label>
+        <input type="text" id="number" required disabled>
+      </div>
+
+      <!-- 4. Email (จำเป็น) -->
+      <div class="form-group">
+        <label>อีเมล</label>
+        <input type="email" id="email" required disabled>
+      </div>
+
+      <!-- 5. เบอร์โทร (ไม่จำเป็น) -->
+      <div class="form-group">
+        <label>เบอร์โทร</label>
+        <input type="tel" id="phone" disabled>
+      </div>
+
+      <button id="saveBtn" type="submit" disabled>Save</button>
+    </form>
+
+    <!-- Back -->
+    <span class="back-link" onclick="location.href='loggedin.html'">
+      Back
+    </span>
+
   </div>
 
   <script src="profile.js"></script>
