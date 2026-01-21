@@ -18,7 +18,7 @@ body {
   width: 440px;
   background: white;
   border-radius: 12px;
-  padding: 32px 36px 48px;
+  padding: 32px 36px 50px;
   box-shadow: 0 4px 14px rgba(0,0,0,0.15);
   position: relative;
 }
@@ -39,13 +39,9 @@ body {
   margin-bottom: 10px;
 }
 
-#usernameDisplay {
-  margin: 6px 0 10px;
-}
-
 .edit-btn {
   font-size: 13px;
-  padding: 4px 12px;
+  padding: 5px 12px;
   cursor: pointer;
 }
 
@@ -60,22 +56,22 @@ body {
 }
 
 .form-group label {
-  display: block;
   font-size: 14px;
+  display: block;
   margin-bottom: 4px;
 }
 
 .form-group input {
   width: 100%;
-  padding: 8px 10px;
+  padding: 9px 10px;
   font-size: 14px;
 }
 
 /* Save */
 #saveBtn {
   width: 100%;
-  margin-top: 14px;
-  padding: 10px 0;
+  padding: 11px 0;
+  margin-top: 12px;
   background: #0078d7;
   color: white;
   border: none;
@@ -88,7 +84,7 @@ body {
   cursor: not-allowed;
 }
 
-/* Back */
+/* Back (ไม่ล้ำกรอบแล้ว) */
 .back-link {
   position: absolute;
   right: 24px;
