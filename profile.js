@@ -1,48 +1,40 @@
-const usernameText = document.getElementById("username");
-const nameInput = document.getElementById("nameInput");
-const editBtn = document.getElementById("editBtn");
-const saveBtn = document.getElementById("saveBtn");
-const inputs = document.querySelectorAll("form input");
+document.addEventListener("DOMContentLoaded", () => {
 
-let editing = false;
+  const username = localStorage.getItem("loggedInUser");
 
-// ดึง username จาก localStorage
-const storedUsername = localStorage.getItem("loggedInUser");
+  const usernameDisplay = document.getElementById("usernameDisplay");
+  const editBtn = document.getElementById("editBtn");
+  const saveBtn = document.getElementById("saveBtn");
+  const inputs = document.querySelectorAll("#profileForm input");
 
-if (!storedUsername) {
-  window.location.href = "index.html";
-}
+  // แสดง username จาก localStorage
+  if (username) {
+    usernameDisplay.textContent = username;
+  }
 
-usernameText.textContent = storedUsername;
-nameInput.value = storedUsername;
+  let editing = false;
 
-// toggle edit
-editBtn.addEventListener("click", () => {
-  editing = !editing;
+  // กด Edit เพื่อเปิด/ปิดการแก้ไข
+  editBtn.addEventListener("click", () => {
+    editing = !editing;
 
-  inputs.forEach(input => {
-    input.disabled = !editing;
+    inputs.forEach(input => {
+      input.disabled = !editing;
+    });
+
+    saveBtn.disabled = !editing;
+    editBtn.textContent = editing ? "❌ Cancel" : "✏️ Edit";
   });
 
-  if (editing) {
-    saveBtn.disabled = false;
-    saveBtn.classList.add("active");
-  } else {
+  // Save
+  document.getElementById("profileForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    alert("บันทึกข้อมูลเรียบร้อย");
+    editing = false;
+
+    inputs.forEach(input => input.disabled = true);
     saveBtn.disabled = true;
-    saveBtn.classList.remove("active");
-  }
-});
+    editBtn.textContent = "✏️ Edit";
+  });
 
-// save
-document.getElementById("profileForm").addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  // บันทึกชื่อ (ถ้าต้องการ)
-  localStorage.setItem("loggedInUser", nameInput.value);
-  usernameText.textContent = nameInput.value;
-
-  editing = false;
-  inputs.forEach(input => input.disabled = true);
-  saveBtn.disabled = true;
-  saveBtn.classList.remove("active");
 });
