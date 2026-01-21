@@ -1,78 +1,76 @@
 body {
   margin: 0;
-  height: 100vh;
-  background: #e8f0fe;
   font-family: Arial, sans-serif;
+  background: #eef4ff;
+}
 
+.profile-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
-/* กล่องกลาง */
-.profile-container {
-  width: 380px;
+.profile-card {
   background: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-  position: relative;
-}
-
-/* Header */
-.profile-header {
+  width: 420px;
+  padding: 30px 35px 40px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   text-align: center;
-  margin-bottom: 25px;
 }
 
 .avatar {
-  width: 100px;
-  height: 100px;
-  background: #0078d7;
+  width: 110px;
+  height: 110px;
+  background: #0077ff;
   border-radius: 50%;
   margin: 0 auto 15px;
 }
 
+#username {
+  margin: 10px 0 12px;
+}
+
 .edit-btn {
-  font-size: 13px;
-  padding: 5px 10px;
+  padding: 5px 14px;
   cursor: pointer;
 }
 
-/* Form */
-.profile-form input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 12px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+form {
+  margin-top: 18px;
 }
 
-.profile-form input:disabled {
-  background: #f2f2f2;
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
 #saveBtn {
   width: 100%;
-  padding: 10px;
-  background: #0078d7;
-  color: white;
+  padding: 11px;
+  background: #b5b5b5;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#saveBtn:disabled {
-  background: #aaa;
+  border-radius: 6px;
+  color: white;
   cursor: not-allowed;
 }
 
-/* Back */
-.back-link {
-  position: absolute;
-  right: 20px;
-  bottom: 15px;
-  text-decoration: underline;
+#saveBtn.active {
+  background: #0077ff;
   cursor: pointer;
+}
+
+.back {
+  margin-top: 16px;
+  text-align: right;
+}
+
+.back a {
+  text-decoration: underline;
+  color: black;
   font-size: 14px;
 }
