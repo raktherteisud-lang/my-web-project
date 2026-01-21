@@ -9,14 +9,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuBtn = document.getElementById("menuBtn");
   const sidebar = document.getElementById("sidebar");
 
+  // ป้องกัน error
+  if (!welcomeMsg || !pointsDisplay || !logoutBtn || !menuBtn || !sidebar) {
+    console.error("HTML element ไม่ครบ");
+    return;
+  }
+
   // เช็ก login
   if (!username) {
     window.location.href = "index.html";
     return;
   }
 
+  // แสดงชื่อ
   welcomeMsg.textContent = `Welcome, ${username}!`;
 
+  // points
   let points = localStorage.getItem("points");
   if (points === null) {
     points = 0;
@@ -24,12 +32,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   pointsDisplay.textContent = `Points: ${points}`;
 
-  // ☰ toggle sidebar
+  // ☰ toggle sidebar (กดซ้ำ = ปิด)
   menuBtn.addEventListener("click", () => {
     sidebar.classList.toggle("open");
   });
 
-  // Logout
+  // Log out
   logoutBtn.addEventListener("click", () => {
     localStorage.removeItem("loggedInUser");
     window.location.href = "index.html";
