@@ -1,55 +1,48 @@
-document.addEventListener("DOMContentLoaded", () => {
+const usernameText = document.getElementById("username");
+const nameInput = document.getElementById("nameInput");
+const editBtn = document.getElementById("editBtn");
+const saveBtn = document.getElementById("saveBtn");
+const inputs = document.querySelectorAll("form input");
 
-  const username = localStorage.getItem("loggedInUser");
-  if (!username) {
-    window.location.href = "index.html";
-    return;
-  }
+let editing = false;
 
-  document.getElementById("username").textContent = username;
+// ดึง username จาก localStorage
+const storedUsername = localStorage.getItem("loggedInUser");
 
-  const inputs = document.querySelectorAll(".profile-form input");
-  const editBtn = document.getElementById("editBtn");
-  const saveBtn = document.getElementById("saveBtn");
-  const backBtn = document.getElementById("backBtn");
+if (!storedUsername) {
+  window.location.href = "index.html";
+}
 
-  let isEditing = false;
+usernameText.textContent = storedUsername;
+nameInput.value = storedUsername;
 
-  // โหลดข้อมูลเดิม
+// toggle edit
+editBtn.addEventListener("click", () => {
+  editing = !editing;
+
   inputs.forEach(input => {
-    const saved = localStorage.getItem(input.id);
-    if (saved) input.value = saved;
+    input.disabled = !editing;
   });
 
-  // Edit toggle
-  editBtn.addEventListener("click", () => {
-    isEditing = !isEditing;
-
-    inputs.forEach(input => {
-      input.disabled = !isEditing;
-    });
-
-    saveBtn.disabled = !isEditing;
-    editBtn.textContent = isEditing ? "✖ Cancel" : "✏️ Edit";
-  });
-
-  // Save
-  saveBtn.addEventListener("click", () => {
-    inputs.forEach(input => {
-      localStorage.setItem(input.id, input.value);
-    });
-
-    isEditing = false;
-    inputs.forEach(input => input.disabled = true);
+  if (editing) {
+    saveBtn.disabled = false;
+    saveBtn.classList.add("active");
+  } else {
     saveBtn.disabled = true;
-    editBtn.textContent = "✏️ Edit";
+    saveBtn.classList.remove("active");
+  }
+});
 
-    alert("Saved!");
-  });
+// save
+document.getElementById("profileForm").addEventListener("submit", (e) => {
+  e.preventDefault();
 
-  // Back
-  backBtn.addEventListener("click", () => {
-    window.location.href = "loggedin.html";
-  });
+  // บันทึกชื่อ (ถ้าต้องการ)
+  localStorage.setItem("loggedInUser", nameInput.value);
+  usernameText.textContent = nameInput.value;
 
+  editing = false;
+  inputs.forEach(input => input.disabled = true);
+  saveBtn.disabled = true;
+  saveBtn.classList.remove("active");
 });
