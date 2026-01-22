@@ -1,29 +1,34 @@
-const editBtn = document.getElementById("editBtn");
-const form = document.getElementById("profileForm");
-const inputs = form.querySelectorAll("input");
+const editBtn = document.getElementById('editBtn');
+const form = document.getElementById('profileForm');
+const inputs = form.querySelectorAll('input');
+const saveBtn = form.querySelector('.save-btn');
 
-// เริ่มต้นให้แก้ไขไม่ได้
+// เริ่มต้น: ล็อกทุกช่อง
 inputs.forEach(input => input.disabled = true);
+saveBtn.disabled = true;
 
 let isEditing = false;
 
-editBtn.addEventListener("click", () => {
-    isEditing = !isEditing;
+editBtn.addEventListener('click', () => {
+  isEditing = !isEditing;
 
-    inputs.forEach(input => {
-        input.disabled = !isEditing;
-    });
+  inputs.forEach(input => {
+    input.disabled = !isEditing; // ⭐ แก้ตรงนี้
+  });
 
-    editBtn.textContent = isEditing ? "✖ Cancel" : "✏ Edit";
+  saveBtn.disabled = !isEditing;
+
+  editBtn.textContent = isEditing ? '✖ Cancel' : '✎ Edit';
 });
 
-// กด Save
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
+// Save
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
 
-    inputs.forEach(input => input.disabled = true);
-    isEditing = false;
-    editBtn.textContent = "✏ Edit";
+  inputs.forEach(input => input.disabled = true);
+  saveBtn.disabled = true;
+  isEditing = false;
+  editBtn.textContent = '✎ Edit';
 
-    alert("บันทึกข้อมูลเรียบร้อย");
+  alert('บันทึกข้อมูลเรียบร้อย');
 });
