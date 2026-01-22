@@ -39,7 +39,8 @@ body {
 .edit-btn {
   margin-bottom: 15px; /* ดันฟอร์มลง */
   border-radius: 8px;
-  padding: 8px 12px;
+  padding: 4px 6px;
+
 }
 
 /* form */
@@ -79,6 +80,7 @@ input {
     text-decoration: underline;
     color: black;
 }
+
 
 
 
