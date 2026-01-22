@@ -46,7 +46,7 @@ body {
 /* ฟอร์มทั้งหมด */
 form {
     text-align: left;
-    margin-top: 40px; /* ดันฟอร์มลงจากหัวการ์ด */
+    margin-top: 28px; /* ดันฟอร์มลงจากหัวการ์ด */
 }
 
 /* กลุ่ม ชื่อ-นามสกุล + Edit */
@@ -93,3 +93,4 @@ input {
     text-decoration: underline;
     color: black;
 }
+
