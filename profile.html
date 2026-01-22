@@ -12,33 +12,33 @@
     <!-- avatar -->
     <img src="assets/avatar.jpg" alt="avatar" class="avatar">
 
+    <h2 id="usernameDisplay"></h2>
+
     <button id="editBtn" class="edit-btn">✏ Edit</button>
 
     <form id="profileForm">
         <label>ชื่อ - นามสกุล</label>
-        <input type="text">
+        <input type="text" id="fullname" disabled required>
 
         <label>ชั้น</label>
-        <input type="text">
+        <input type="text" id="class" disabled required>
 
         <label>เลขที่</label>
-        <input type="text">
+        <input type="text" id="number" disabled required>
 
         <label>อีเมล</label>
-        <input type="email">
+        <input type="email" id="email" disabled required>
 
         <label>เบอร์โทร</label>
-        <input type="tel">
+        <input type="tel" id="phone" disabled>
 
-        <button type="submit" class="save-btn">Save</button>
+        <button type="submit" class="save-btn" disabled>Save</button>
     </form>
 
-    <a href="index.html" class="back-btn">Back</a>
+    <a href="loggedin.html" class="back-btn">Back</a>
 
 </div>
 
-<!-- เชื่อม JS -->
 <script src="profile.js"></script>
-
 </body>
 </html>
