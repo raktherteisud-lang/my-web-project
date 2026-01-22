@@ -22,21 +22,23 @@ body {
     object-fit: cover;
     margin-bottom: 10px;
 }
-
-.edit-btn {
-    position: absolute;
-    top: 32px;
-    right: 8px;
-    padding: 6px 10px;
-    border-radius: 8px;
-    cursor: pointer;
-}
 .field-with-edit {
     position: relative;
+    margin-bottom: 25px; /* ระยะห่างจากช่องถัดไป */
 }
 
 .field-with-edit input {
-    padding-right: 90px;
+    padding-right: 100px; /* เว้นที่ให้ปุ่ม Edit */
+}
+
+.edit-btn {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%); /* จัดให้อยู่กึ่งกลางช่อง */
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 }
@@ -85,6 +87,7 @@ input {
     text-decoration: underline;
     color: black;
 }
+
 
 
 
