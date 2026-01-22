@@ -30,9 +30,10 @@ body {
     padding: 6px 12px;
     border-radius: 8px;
     cursor: pointer;
+    z-index: 10;
 }
 
-}
+
 /* ฟอร์มทั้งหมด */
 form {
     text-align: left;
@@ -78,6 +79,7 @@ input {
     text-decoration: underline;
     color: black;
 }
+
 
 
 
