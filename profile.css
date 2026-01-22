@@ -29,7 +29,7 @@ body {
 
 .field-with-edit .edit-btn {
   position: absolute;
-  top: -10;
+  top: 10;
   right: 0;
   padding: 4px 6px;
   cursor: pointer;
@@ -93,5 +93,6 @@ input {
     text-decoration: underline;
     color: black;
 }
+
 
 
