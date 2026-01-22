@@ -32,3 +32,4 @@ form.addEventListener('submit', (e) => {
 
   alert('บันทึกข้อมูลเรียบร้อย');
 });
+
