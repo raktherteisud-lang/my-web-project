@@ -23,11 +23,22 @@ body {
     margin-bottom: 10px;
 }
 
-/* edit button */ .edit-btn { 
-    top: 5; 
-    margin-bottom: 20px; /* ดันฟอร์มลง */ 
-    border-radius: 8px; 
-    padding: 4px 6px;
+.edit-btn {
+    position: absolute;
+    top: 32px;
+    right: 8px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.field-with-edit {
+    position: relative;
+}
+
+.field-with-edit input {
+    padding-right: 90px;
+}
+
 }
 /* ฟอร์มทั้งหมด */
 form {
@@ -55,11 +66,6 @@ input {
     box-sizing: border-box;
 }
 
-/* ปุ่ม Edit */
-.edit-btn {
-    padding: 6px 10px;
-}
-
 /* ปุ่ม Save */
 .save-btn {
     width: 100%;
@@ -79,6 +85,7 @@ input {
     text-decoration: underline;
     color: black;
 }
+
 
 
 
