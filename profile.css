@@ -25,7 +25,7 @@ body {
 
 .edit-btn {
     position: absolute;
-    right: 8px;
+    right: 5px;
     top: 60px;
     padding: 6px 12px;
     border-radius: 8px;
@@ -78,6 +78,7 @@ input {
     text-decoration: underline;
     color: black;
 }
+
 
 
 
