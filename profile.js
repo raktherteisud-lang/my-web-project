@@ -10,11 +10,6 @@ const inputs = document.querySelectorAll("input");
 
 const currentUser = localStorage.getItem("currentUser");
 
-if (!currentUser) {
-  alert("กรุณาเข้าสู่ระบบใหม่");
-  window.location.href = "login.html";
-}
-
 const savedProfile = localStorage.getItem(`profile_${currentUser}`);
 
 if (savedProfile) {
@@ -95,3 +90,4 @@ form.addEventListener("submit", (e) => {
 
   alert("บันทึกข้อมูลแล้ว");
 });
+
