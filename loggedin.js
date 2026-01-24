@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  const username = localStorage.getItem("loggedInUser");
+  const username = localStorage.getItem("currentUser");
 
   const welcomeMsg = document.getElementById("welcomeMsg");
   const pointsDisplay = document.getElementById("points");
@@ -45,8 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Log out
   logoutBtn.addEventListener("click", () => {
-    localStorage.removeItem("loggedInUser");
+    localStorage.removeItem("currentUser");
     window.location.href = "index.html";
   });
 
 });
+
