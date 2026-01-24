@@ -1,5 +1,6 @@
 const form = document.getElementById('loginForm');
 const errorMsg = document.getElementById('errorMsg');
+const mouseLight = document.getElementById("mouse-light");
 
 form.addEventListener('submit', function(e) {
   e.preventDefault();
@@ -33,4 +34,5 @@ form.addEventListener('submit', function(e) {
     )
   `;
 });
+
 
