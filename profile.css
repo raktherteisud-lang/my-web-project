@@ -79,6 +79,22 @@ input {
     text-decoration: underline;
     color: black;
 }
+/* Save disabled (ค่าเดิม) */
+.save-btn:disabled {
+  background: #b0b0b0;
+  cursor: not-allowed;
+}
+
+/* Save enabled */
+.save-btn.active {
+  background: #0078d7;
+  cursor: pointer;
+}
+
+.save-btn.active:hover {
+  background: #005fa3;
+}
+
 
 
 
