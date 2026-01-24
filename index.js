@@ -6,10 +6,16 @@ const form = document.getElementById('loginForm');
       const username = document.getElementById('username').value;
       const password = document.getElementById('password').value;
 
-      const savedUsername = localStorage.getItem('username');
-      const savedPassword = localStorage.getItem('password');
+      const userData = localStorage.getItem(`user_${username}`);
 
-      if (username === savedUsername && password === savedPassword) {
+        if (!userData) {
+    errorMsg.textContent = "ไม่พบบัญชีผู้ใช้";
+    return;
+  }
+
+        const parsedUser = JSON.parse(userData);
+
+      if (password === parsedUser.password) {
         localStorage.setItem('currentUser', username);
         window.location.href = "loggedin.html";
       } else {
@@ -17,3 +23,4 @@ const form = document.getElementById('loginForm');
       }
 
     });
+
