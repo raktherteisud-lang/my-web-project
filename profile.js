@@ -7,7 +7,17 @@ const phone = document.getElementById("phone");
 const saveBtn = document.getElementById("saveBtn");
 const editBtn = document.getElementById("editBtn");
 const inputs = document.querySelectorAll("input");
+const savedProfile = localStorage.getItem("profileData");
 
+if (savedProfile) {
+  const data = JSON.parse(savedProfile);
+
+  fullname.value = data.fullname || "";
+  classInput.value = data.class || "";
+  number.value = data.number || "";
+  email.value = data.email || "";
+  phone.value = data.phone || "";
+}
 function checkForm() {
   if (!isEditing) return;
 
@@ -65,5 +75,6 @@ form.addEventListener("submit", (e) => {
 
   alert("บันทึกข้อมูลแล้ว");
 });
+
 
 
