@@ -7,7 +7,15 @@ const phone = document.getElementById("phone");
 const saveBtn = document.getElementById("saveBtn");
 const editBtn = document.getElementById("editBtn");
 const inputs = document.querySelectorAll("input");
-const savedProfile = localStorage.getItem("profileData");
+
+const currentUser = localStorage.getItem("currentUser");
+
+if (!currentUser) {
+  alert("กรุณาเข้าสู่ระบบใหม่");
+  window.location.href = "login.html";
+}
+
+const savedProfile = localStorage.getItem(`profile_${currentUser}`);
 
 if (savedProfile) {
   const data = JSON.parse(savedProfile);
@@ -18,6 +26,7 @@ if (savedProfile) {
   email.value = data.email || "";
   phone.value = data.phone || "";
 }
+
 function checkForm() {
   if (!isEditing) return;
 
@@ -72,8 +81,10 @@ form.addEventListener("submit", (e) => {
     email: email.value,
     phone: phone.value
   };
-  localStorage.setItem("profileData", JSON.stringify(profileData));
-
+  localStorage.setItem(
+  `profile_${currentUser}`,
+  JSON.stringify(profileData)
+);
   inputs.forEach(input => input.disabled = true);
   saveBtn.disabled = true;
   saveBtn.classList.remove("active");
@@ -84,7 +95,3 @@ form.addEventListener("submit", (e) => {
 
   alert("บันทึกข้อมูลแล้ว");
 });
-
-
-
-
